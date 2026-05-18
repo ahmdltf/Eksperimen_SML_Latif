@@ -31,7 +31,7 @@ jobs:
       ### Run preprocessing
       - name: Run Preprocessing
         run: |
-          python main.py
+          python Eksperimen_Latif.ipynb
 
       ### Commit preprocessing result
       - name: Commit Processed Dataset

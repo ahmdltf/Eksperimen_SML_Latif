@@ -1,0 +1,46 @@
+name: Automatic Preprocessing
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  preprocessing:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      ### Checkout repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      ### Setup Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      ### Install dependencies
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      ### Run preprocessing
+      - name: Run Preprocessing
+        run: |
+          python main.py
+
+      ### Commit preprocessing result
+      - name: Commit Processed Dataset
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+          git add preprocessing/dataset_preprocessing.csv
+
+          git commit -m "Update preprocessing dataset" || echo "No changes to commit"
+
+          git push

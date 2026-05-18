@@ -26,7 +26,7 @@ jobs:
       ### Install dependencies
       - name: Install Dependencies
         run: |
-          pip install -r ${{ github.workspace }}/requirements.txt
+          pip install -r Eksperimen_SML_Latif/requirements.txt
 
       ### Run preprocessing
       - name: Run Preprocessing

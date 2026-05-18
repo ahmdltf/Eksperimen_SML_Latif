@@ -45,9 +45,8 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
-          git add Eksperimen_SML_Latif/preprocessing/dataset_preprocessing.csv
+          ls -R
           
-          # Baris ini sudah aman karena ada proteksi jika tidak ada perubahan
+          git add .
           git commit -m "Update preprocessing dataset" || echo "No changes to commit"
-          
           git push

@@ -31,6 +31,7 @@ jobs:
       ### Run preprocessing
       - name: Run Preprocessing
         run: |
+          cd preprocessing
           python Eksperimen_Latif.ipynb
 
       ### Commit preprocessing result

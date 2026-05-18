@@ -37,7 +37,7 @@ jobs:
       ### Commit preprocessing result
       - name: Commit Processed Dataset
         env:
-          GITHUB_TOKEN: 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
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
